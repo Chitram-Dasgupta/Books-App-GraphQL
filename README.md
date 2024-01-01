@@ -4,6 +4,9 @@
 query showBook {
   book(id: 4) {
     title
+    author {
+      name
+    }
   }
 }
 
@@ -11,6 +14,9 @@ query allBooks {
   books {
     id
     title
+    author {
+      name
+    }
   }
 }
 
@@ -20,6 +26,9 @@ mutation createABook {
       id
       title
       authorId
+      author {
+        name
+      }
     }
     errors
   }
@@ -30,6 +39,9 @@ mutation updateABook {
     book {
       id
       title
+      author {
+        name
+      }
     }
     errors
   }
@@ -40,6 +52,9 @@ mutation deleteABook {
     book {
       id
       title
+      author {
+        name
+      }
     }
   }
 }
