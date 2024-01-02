@@ -56,22 +56,55 @@ mutation deleteABook {
         name
       }
     }
+    errors
   }
 }
 
-## Authors
-
 query allAuthors {
   authors {
+    id
     name
     age
   }
 }
 
 query showAuthor {
-  author(id: 2) {
+  author(id: 3) {
     name
     age
+  }
+}
+
+mutation createAnAuthor {
+  createAuthor(input: {name: "Thomas Mann", age: 54}) {
+    author {
+      id
+      name
+      age
+    }
+    errors
+  }
+}
+
+mutation updateAnAuthor {
+  updateAuthor(input: {id: 4, name: "Hermann Hesse", age: 62}) {
+    author {
+      id
+      name
+      age
+    }
+    errors
+  }
+}
+
+mutation deleteAnAuthor {
+  deleteAuthor(input: {id: 4}) {
+    author {
+      id
+      name
+      age
+    }
+    errors
   }
 }
 ```
