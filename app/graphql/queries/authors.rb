@@ -3,7 +3,7 @@ module Queries
     type [Types::AuthorType], null: false
 
     def resolve
-      Author.all
+      Author.includes(:books).all
     end
   end
 end

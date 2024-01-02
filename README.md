@@ -3,9 +3,14 @@
 ```
 query showBook {
   book(id: 4) {
+    id
     title
     author {
       name
+      books {
+        id
+        title
+      }
     }
   }
 }
@@ -16,6 +21,10 @@ query allBooks {
     title
     author {
       name
+      books {
+        id
+        title
+      }
     }
   }
 }
@@ -65,6 +74,10 @@ query allAuthors {
     id
     name
     age
+    books {
+      id
+      title
+    }
   }
 }
 
@@ -72,6 +85,10 @@ query showAuthor {
   author(id: 3) {
     name
     age
+    books {
+      id
+      title
+    }
   }
 }
 
